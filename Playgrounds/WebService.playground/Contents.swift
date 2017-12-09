@@ -6,7 +6,7 @@ import PlaygroundSupport
 PlaygroundPage.current.needsIndefiniteExecution = true
 
 let disposeBag = DisposeBag()
-let assembly = CoreAssembly()
+let assembly = CoreAssembly(navigationController: UINavigationController())
 let webService = assembly.webServiceAssembly.webService
 
 // Load configuration
