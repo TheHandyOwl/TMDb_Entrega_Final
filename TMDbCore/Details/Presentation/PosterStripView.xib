@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="YZE-90-bKK" customClass="PosterStripView" customModule="TMDbCore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZU-tI-SwN">
+                    <rect key="frame" x="16" y="0.0" width="33.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5PD-Z1-sUi">
+                    <rect key="frame" x="0.0" y="32" width="375" height="186"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewLayout key="collectionViewLayout" id="4OB-GC-70h" customClass="PosterStripLayout" customModule="TMDbCore" customModuleProvider="target"/>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="5PD-Z1-sUi" secondAttribute="bottom" id="FBS-Ek-U0h"/>
+                <constraint firstAttribute="trailing" secondItem="5PD-Z1-sUi" secondAttribute="trailing" id="SIy-FC-C2V"/>
+                <constraint firstItem="5PD-Z1-sUi" firstAttribute="top" secondItem="YZE-90-bKK" secondAttribute="top" constant="32" id="b3i-Ru-KRJ"/>
+                <constraint firstItem="5PD-Z1-sUi" firstAttribute="leading" secondItem="YZE-90-bKK" secondAttribute="leading" id="hJv-19-qeD"/>
+                <constraint firstItem="dZU-tI-SwN" firstAttribute="top" secondItem="YZE-90-bKK" secondAttribute="top" id="p9Q-LY-a7U"/>
+                <constraint firstItem="dZU-tI-SwN" firstAttribute="leading" secondItem="YZE-90-bKK" secondAttribute="leading" constant="16" id="vgu-jo-Exb"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="K4p-H0-CNO"/>
+            <connections>
+                <outlet property="collectionView" destination="5PD-Z1-sUi" id="hgE-31-BfW"/>
+                <outlet property="titleLabel" destination="dZU-tI-SwN" id="hHe-Ap-yNV"/>
+            </connections>
+            <point key="canvasLocation" x="-318" y="-269"/>
+        </view>
+    </objects>
+</document>
