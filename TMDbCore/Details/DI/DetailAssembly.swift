@@ -34,6 +34,16 @@ final class DetailAssembly {
 		                            viewControllerProvider: self)
 	}
 
+    func showPresenter(identifier: Int64) -> DetailPresenter {
+        return ShowPresenter(repository: showRepository(),
+                             dateFormatter: webServiceAssembly.dateFormatter,
+                             identifier: identifier)
+    }
+    
+    func showRepository() -> ShowRepositoryProtocol {
+        return ShowRepository(webService: webServiceAssembly.webService)
+    }
+    
 	func moviePresenter(identifier: Int64) -> DetailPresenter {
 		return MoviePresenter(repository: movieRepository(),
 		                      dateFormatter: webServiceAssembly.dateFormatter,
@@ -59,6 +69,8 @@ extension DetailAssembly: DetailViewControllerProvider {
 		let presenter: DetailPresenter
 
 		switch mediaType {
+        case .show:
+            presenter = showPresenter(identifier: identifier)
 		case .movie:
 			presenter = moviePresenter(identifier: identifier)
 		default:
