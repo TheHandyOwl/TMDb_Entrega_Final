@@ -330,9 +330,9 @@
 		996690B81F7A965A00AF16B3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				99C5C9131F7B8C370038688F /* Assets */,
 				993F1E781F7A9AB3004FE33B /* Domain */,
 				996690BA1F7A966E00AF16B3 /* Utilities */,
-				99C5C9131F7B8C370038688F /* Assets */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -352,11 +352,11 @@
 		996690C01F7A973200AF16B3 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				99F056471F8A2CB200A680D8 /* Repositories */,
-				99B7FB8C1F88E4A8003CEF98 /* Navigators */,
 				997A44241F7AA9780094E928 /* DI */,
-				996690C21F7A989200AF16B3 /* Presentation */,
 				993F1E811F7A9ED3004FE33B /* Domain */,
+				99B7FB8C1F88E4A8003CEF98 /* Navigators */,
+				996690C21F7A989200AF16B3 /* Presentation */,
+				99F056471F8A2CB200A680D8 /* Repositories */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -384,10 +384,10 @@
 		9989A11F1F74EDA500D8DCA7 /* Image Loading */ = {
 			isa = PBXGroup;
 			children = (
-				9989A1201F74EDD400D8DCA7 /* ImageSize.swift */,
 				99B9A3491F74181A004F883E /* Configuration.swift */,
-				9989A1221F74EE8500D8DCA7 /* ImageRepository.swift */,
 				997A44291F7AABD10094E928 /* ImageLoadingAssembly.swift */,
+				9989A1221F74EE8500D8DCA7 /* ImageRepository.swift */,
+				9989A1201F74EDD400D8DCA7 /* ImageSize.swift */,
 			);
 			path = "Image Loading";
 			sourceTree = "<group>";
@@ -455,16 +455,16 @@
 		9995F3691F73A4E2009BA4D7 /* TMDbCore */ = {
 			isa = PBXGroup;
 			children = (
-				99A4652A1F7CCF5B007F3B5B /* Details */,
-				99C5C90B1F7B86CD0038688F /* Featured */,
-				996690C01F7A973200AF16B3 /* Search */,
-				9989A11F1F74EDA500D8DCA7 /* Image Loading */,
-				99B9A3361F73CB40004F883E /* Web Service */,
 				996690B81F7A965A00AF16B3 /* Common */,
-				9989A1251F74F7BA00D8DCA7 /* DI */,
 				99B9A3451F74072C004F883E /* Config */,
-				9995F36A1F73A4E2009BA4D7 /* TMDbCore.h */,
+				99A4652A1F7CCF5B007F3B5B /* Details */,
+				9989A1251F74F7BA00D8DCA7 /* DI */,
+				99C5C90B1F7B86CD0038688F /* Featured */,
+				9989A11F1F74EDA500D8DCA7 /* Image Loading */,
+				996690C01F7A973200AF16B3 /* Search */,
+				99B9A3361F73CB40004F883E /* Web Service */,
 				9995F36B1F73A4E2009BA4D7 /* Info.plist */,
+				9995F36A1F73A4E2009BA4D7 /* TMDbCore.h */,
 			);
 			path = TMDbCore;
 			sourceTree = "<group>";
@@ -495,11 +495,11 @@
 		99A4652A1F7CCF5B007F3B5B /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				99F0564E1F8A59E200A680D8 /* Repositories */,
-				99B7FB871F88CAF3003CEF98 /* Navigators */,
 				998AD7DD1F7FF75900D3A222 /* DI */,
 				992D27B91F7FFD1F00BA79DE /* Domain */,
+				99B7FB871F88CAF3003CEF98 /* Navigators */,
 				99A4652B1F7CCF66007F3B5B /* Presentation */,
+				99F0564E1F8A59E200A680D8 /* Repositories */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -574,10 +574,10 @@
 		99C5C90B1F7B86CD0038688F /* Featured */ = {
 			isa = PBXGroup;
 			children = (
-				99F056441F8A17FC00A680D8 /* Repositories */,
-				99B7FB911F894288003CEF98 /* Domain */,
 				99C5C90E1F7B86F90038688F /* DI */,
+				99B7FB911F894288003CEF98 /* Domain */,
 				99C5C90D1F7B86F20038688F /* Presentation */,
+				99F056441F8A17FC00A680D8 /* Repositories */,
 			);
 			path = Featured;
 			sourceTree = "<group>";
