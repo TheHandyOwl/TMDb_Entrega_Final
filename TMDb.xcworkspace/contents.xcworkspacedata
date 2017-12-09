@@ -8,22 +8,22 @@
       location = "group:Playgrounds"
       name = "Playgrounds">
       <FileRef
-         location = "group:WebService.playground">
-      </FileRef>
-      <FileRef
-         location = "group:ReactiveX.playground">
-      </FileRef>
-      <FileRef
          location = "group:Details.playground">
       </FileRef>
       <FileRef
          location = "group:Featured.playground">
       </FileRef>
       <FileRef
+         location = "group:ImageLoading.playground">
+      </FileRef>
+      <FileRef
+         location = "group:ReactiveX.playground">
+      </FileRef>
+      <FileRef
          location = "group:Search.playground">
       </FileRef>
       <FileRef
-         location = "group:ImageLoading.playground">
+         location = "group:WebService.playground">
       </FileRef>
    </Group>
 </Workspace>
