@@ -14,15 +14,18 @@ protocol FeaturedView: class {
 	func setShowsHeaderTitle(_ title: String)
 	func setMoviesHeaderTitle(_ title: String)
 
+    func setLoading(_ loading: Bool)
+
 	func update(with shows: [Show])
 	func update(with movies: [Movie])
+
 }
 
 final class FeaturedPresenter {
 	private let detailNavigator: DetailNavigator
     private let repository: FeaturedRepositoryProtocol
     private let disposeBag = DisposeBag()
-    
+
 	weak var view: FeaturedView?
 
     init(detailNavigator: DetailNavigator,
@@ -37,6 +40,7 @@ final class FeaturedPresenter {
 		view?.setMoviesHeaderTitle(NSLocalizedString("IN THEATERS", comment: ""))
 
 		loadContents()
+
 	}
 
 	func didSelect(show: Show) {
@@ -52,6 +56,7 @@ final class FeaturedPresenter {
 
 private extension FeaturedPresenter {
     func loadContents() {
+        view?.setLoading(true)
         let showsOnTheAir = repository.showsOnTheAir()
             .map { $0.prefix(3) }
         let moviesNowPlaying = repository.moviesNowPlaying(region: Locale.current.regionCode!)
@@ -67,7 +72,9 @@ private extension FeaturedPresenter {
             }
             self.view?.update(with: Array(shows))
             self.view?.update(with: Array(movies))
+            self.view?.setLoading(false)
         })
+            
         .disposed(by: disposeBag)
     }
 }
