@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeaturedViewController" customModule="TMDbCore" customModuleProvider="target">
             <connections>
+                <outlet property="loadingView" destination="ye5-ia-wWc" id="J9y-JP-67h"/>
                 <outlet property="moviesLabel" destination="Wvn-6H-KIs" id="b6w-ug-CSc"/>
                 <outlet property="moviesStackView" destination="gOC-gZ-6gY" id="G0r-JE-mMx"/>
+                <outlet property="scrollView" destination="cOB-mT-zVj" id="h3v-OU-ViI"/>
                 <outlet property="showsLabel" destination="fvk-fo-JMz" id="AZS-P1-Te4"/>
                 <outlet property="showsStackView" destination="uRq-Mz-ice" id="vQZ-z8-CyU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -63,12 +65,17 @@
                         <constraint firstAttribute="bottom" secondItem="gOC-gZ-6gY" secondAttribute="bottom" constant="16" id="zxh-QC-o81"/>
                     </constraints>
                 </scrollView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ye5-ia-wWc" userLabel="Loading View">
+                    <rect key="frame" x="150" y="284" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="ye5-ia-wWc" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="43e-Wv-eYd"/>
                 <constraint firstItem="cOB-mT-zVj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KcD-lZ-Gil"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cOB-mT-zVj" secondAttribute="bottom" id="VFl-js-6a8"/>
                 <constraint firstItem="cOB-mT-zVj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YaQ-ze-nP7"/>
+                <constraint firstItem="ye5-ia-wWc" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="lqW-r6-Wbh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cOB-mT-zVj" secondAttribute="trailing" id="zAM-9c-U2h"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
