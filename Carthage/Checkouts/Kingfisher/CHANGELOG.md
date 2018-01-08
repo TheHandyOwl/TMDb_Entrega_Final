@@ -2,6 +2,46 @@
 
 -----
 
+## [4.6.1 - MD5](https://github.com/onevcat/Kingfisher/releases/tag/4.6.1) (2017-12-28)
+
+#### Fix
+* Revert to use non-dependency way to handle MD5, to solve issues which redefination of dependency library. [#834](https://github.com/onevcat/Kingfisher/pull/834)
+
+---
+
+## [4.6.0 - AniBird](https://github.com/onevcat/Kingfisher/releases/tag/4.6.0) (2017-12-27)
+
+#### Add
+* Delegate methods for `AnimatedImageView` to inspect finishing event and/or end of an animation loop. [#829](https://github.com/onevcat/Kingfisher/pull/829)
+
+#### Fix
+* Minor performance improvement by `final` some classes.
+* Remove unnecessary `Box` type since Objective-C world takes `Any`. [#832](https://github.com/onevcat/Kingfisher/pull/832).
+* Some internal failing tests on earlier macOS, in which color space giving different result.
+
+---
+
+## [4.5.0 - Blending](https://github.com/onevcat/Kingfisher/releases/tag/4.5.0) (2017-12-05)
+
+#### Add
+* New image processors to blend an image. See `BlendImageProcessor` on iOS/tvOS and `CompositingImageProcessor` on macOS. [#818](https://github.com/onevcat/Kingfisher/pull/818)
+
+#### Fix
+* A crash when prefetching too many images in a single batch. [#692](https://github.com/onevcat/Kingfisher/issues/692)
+* A possible invalid redeclaration on `Array` from `AnimatedImageView`. [#819](https://github.com/onevcat/Kingfisher/pull/819)
+
+---
+
+## [4.4.0 - Image Modifier](https://github.com/onevcat/Kingfisher/releases/tag/4.4.0) (2017-12-01)
+
+#### Add
+* Add `ImageModifier` to give a final chance for setting image object related properties just before getting back the image from either network or cache. [#810](https://github.com/onevcat/Kingfisher/issues/810)
+
+#### Fix
+* Apply scale on all image based processor methods, including the existing ones from memory cache. [#813](https://github.com/onevcat/Kingfisher/issues/813)
+
+---
+
 ## [4.3.1 - Cache Regression](https://github.com/onevcat/Kingfisher/releases/tag/4.3.1) (2017-11-21)
 
 #### Fix
