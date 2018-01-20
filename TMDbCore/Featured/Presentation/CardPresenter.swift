@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-/// Presents movies or shows in card views
+/// Presents movies or shows or people in card views
 final class CardPresenter {
 	private let imageRepository: ImageRepositoryProtocol
 	private let dateFormatter: DateFormatter
@@ -44,6 +44,34 @@ final class CardPresenter {
 
 		cardView.metadataLabel.text = [year, genre].flatMap { $0 }.joined(separator: " ⋅ ")
 	}
+    
+    func present(person: Person, in cardView: CardView) {
+        bindBackdrop(at: person.profilePath, to: cardView)
+        
+        cardView.titleLabel.text = person.name.uppercased()
+        
+        let metadata = person.knownFor?.first
+            .flatMap { media -> (String, Date?) in
+                switch media {
+                case .movie(let movie):
+                    let releaseDate = movie.releaseDate.flatMap { dateFormatter.date(from: $0) }
+                    return (movie.title, releaseDate)
+                case .show(let show):
+                    let firstAirDate = show.firstAirDate.flatMap { dateFormatter.date(from: $0) }
+                    return (show.title, firstAirDate)
+                }
+            }
+            .map { title, date in
+                if let year = date?.year {
+                    return "\(title) (\(year))"
+                }
+                return title
+            } ?? ""
+        
+        cardView.metadataLabel.text = metadata
+        cardView.metadataLabel.isHidden = metadata.isEmpty
+        
+    }
 }
 
 private extension CardPresenter {

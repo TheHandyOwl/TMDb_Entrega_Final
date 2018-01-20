@@ -14,6 +14,8 @@
                 <outlet property="loadingView" destination="ye5-ia-wWc" id="J9y-JP-67h"/>
                 <outlet property="moviesLabel" destination="Wvn-6H-KIs" id="b6w-ug-CSc"/>
                 <outlet property="moviesStackView" destination="gOC-gZ-6gY" id="G0r-JE-mMx"/>
+                <outlet property="personsLabel" destination="v5U-0B-OPU" id="TWq-Ny-Dpt"/>
+                <outlet property="personsStackView" destination="P6m-l2-9IN" id="vwc-ah-4Bd"/>
                 <outlet property="scrollView" destination="cOB-mT-zVj" id="h3v-OU-ViI"/>
                 <outlet property="showsLabel" destination="fvk-fo-JMz" id="AZS-P1-Te4"/>
                 <outlet property="showsStackView" destination="uRq-Mz-ice" id="vQZ-z8-CyU"/>
@@ -46,23 +48,39 @@
                         <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="176" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gOC-gZ-6gY">
                             <rect key="frame" x="0.0" y="263" width="320" height="176"/>
                         </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5U-0B-OPU" userLabel="Persons Label">
+                            <rect key="frame" x="16" y="455" width="41.5" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="176" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="P6m-l2-9IN" userLabel="Persons Stack View">
+                            <rect key="frame" x="0.0" y="482.5" width="320" height="176"/>
+                        </stackView>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="P6m-l2-9IN" firstAttribute="width" secondItem="cOB-mT-zVj" secondAttribute="width" id="1x1-dB-236"/>
                         <constraint firstItem="Wvn-6H-KIs" firstAttribute="leading" secondItem="cOB-mT-zVj" secondAttribute="leading" constant="16" id="6kc-82-C17"/>
                         <constraint firstItem="fvk-fo-JMz" firstAttribute="leading" secondItem="cOB-mT-zVj" secondAttribute="leading" constant="16" id="71T-aV-poc"/>
+                        <constraint firstItem="P6m-l2-9IN" firstAttribute="top" secondItem="v5U-0B-OPU" secondAttribute="bottom" constant="8" id="9HU-QC-teX"/>
                         <constraint firstItem="Wvn-6H-KIs" firstAttribute="top" secondItem="uRq-Mz-ice" secondAttribute="bottom" constant="16" id="E6l-gA-w0o"/>
-                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fvk-fo-JMz" secondAttribute="trailing" constant="16" id="FgD-pe-Xo4"/>
+                        <constraint firstItem="fvk-fo-JMz" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="cOB-mT-zVj" secondAttribute="trailing" constant="-16" id="FgD-pe-Xo4"/>
                         <constraint firstItem="fvk-fo-JMz" firstAttribute="top" secondItem="cOB-mT-zVj" secondAttribute="top" constant="16" id="HxN-Ci-G3v"/>
-                        <constraint firstAttribute="trailing" secondItem="gOC-gZ-6gY" secondAttribute="trailing" id="PXC-bL-yzp"/>
+                        <constraint firstItem="P6m-l2-9IN" firstAttribute="leading" secondItem="cOB-mT-zVj" secondAttribute="leading" id="OSg-Ze-O2Y"/>
+                        <constraint firstItem="gOC-gZ-6gY" firstAttribute="trailing" secondItem="cOB-mT-zVj" secondAttribute="trailing" id="PXC-bL-yzp"/>
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Wvn-6H-KIs" secondAttribute="trailing" constant="16" id="bAl-37-URe"/>
                         <constraint firstItem="uRq-Mz-ice" firstAttribute="leading" secondItem="cOB-mT-zVj" secondAttribute="leading" id="cih-U0-7wl"/>
+                        <constraint firstItem="P6m-l2-9IN" firstAttribute="trailing" secondItem="cOB-mT-zVj" secondAttribute="trailing" id="cys-jD-6jM"/>
+                        <constraint firstItem="v5U-0B-OPU" firstAttribute="top" secondItem="gOC-gZ-6gY" secondAttribute="bottom" constant="16" id="efL-Gq-N2C"/>
                         <constraint firstItem="gOC-gZ-6gY" firstAttribute="width" secondItem="cOB-mT-zVj" secondAttribute="width" id="hI4-vu-yQG"/>
+                        <constraint firstItem="v5U-0B-OPU" firstAttribute="leading" secondItem="cOB-mT-zVj" secondAttribute="leading" constant="16" id="lUM-AB-WJ4"/>
                         <constraint firstItem="uRq-Mz-ice" firstAttribute="top" secondItem="fvk-fo-JMz" secondAttribute="bottom" constant="8" id="ldP-rF-FXD"/>
                         <constraint firstItem="gOC-gZ-6gY" firstAttribute="leading" secondItem="cOB-mT-zVj" secondAttribute="leading" id="o8l-tC-XdN"/>
-                        <constraint firstAttribute="trailing" secondItem="uRq-Mz-ice" secondAttribute="trailing" id="vZ3-vr-SVd"/>
+                        <constraint firstItem="v5U-0B-OPU" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="cOB-mT-zVj" secondAttribute="trailing" constant="-16" id="thr-u2-hPz"/>
+                        <constraint firstItem="uRq-Mz-ice" firstAttribute="trailing" secondItem="cOB-mT-zVj" secondAttribute="trailing" id="vZ3-vr-SVd"/>
                         <constraint firstItem="uRq-Mz-ice" firstAttribute="width" secondItem="cOB-mT-zVj" secondAttribute="width" id="x9R-Yd-yJX"/>
                         <constraint firstItem="gOC-gZ-6gY" firstAttribute="top" secondItem="Wvn-6H-KIs" secondAttribute="bottom" constant="8" id="xTg-mq-QKl"/>
-                        <constraint firstAttribute="bottom" secondItem="gOC-gZ-6gY" secondAttribute="bottom" constant="16" id="zxh-QC-o81"/>
+                        <constraint firstItem="P6m-l2-9IN" firstAttribute="bottom" secondItem="cOB-mT-zVj" secondAttribute="bottom" constant="-16" id="xop-Hc-7fk"/>
                     </constraints>
                 </scrollView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ye5-ia-wWc" userLabel="Loading View">
