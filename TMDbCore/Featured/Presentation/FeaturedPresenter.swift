@@ -13,11 +13,13 @@ protocol FeaturedView: class {
 
 	func setShowsHeaderTitle(_ title: String)
 	func setMoviesHeaderTitle(_ title: String)
+    func setPeopleHeaderTitle(_ title: String)
 
     func setLoading(_ loading: Bool)
 
 	func update(with shows: [Show])
 	func update(with movies: [Movie])
+    func update(with persons: [Person])
 
 }
 
@@ -38,6 +40,7 @@ final class FeaturedPresenter {
 		view?.title = NSLocalizedString("Featured", comment: "")
 		view?.setShowsHeaderTitle(NSLocalizedString("ON TV", comment: ""))
 		view?.setMoviesHeaderTitle(NSLocalizedString("IN THEATERS", comment: ""))
+        view?.setPeopleHeaderTitle(NSLocalizedString("TRENDING PEOPLE", comment: ""))
 
 		loadContents()
 
@@ -52,6 +55,11 @@ final class FeaturedPresenter {
 		detailNavigator.showDetail(withIdentifier: movie.identifier,
 		                           mediaType: .movie)
 	}
+    
+    func didSelect(person: Person) {
+        detailNavigator.showDetail(withIdentifier: person.identifier,
+                                   mediaType: .person)
+    }
 }
 
 private extension FeaturedPresenter {
@@ -61,17 +69,20 @@ private extension FeaturedPresenter {
             .map { $0.prefix(3) }
         let moviesNowPlaying = repository.moviesNowPlaying(region: Locale.current.regionCode!)
             .map { $0.prefix(3) }
+        let trendingPeople = repository.trendingPeople()
+            .map { $0.prefix(3) }
         
-        Observable.combineLatest(showsOnTheAir, moviesNowPlaying) { shows, movies in
-            return (shows, movies)
+        Observable.combineLatest(showsOnTheAir, moviesNowPlaying, trendingPeople) { shows, movies, people in
+            return (shows, movies, people)
         }
         .observeOn(MainScheduler.instance)
-        .subscribe(onNext: { [weak self] shows, movies in
+        .subscribe(onNext: { [weak self] shows, movies, people in
             guard let `self` = self else {
                 return
             }
             self.view?.update(with: Array(shows))
             self.view?.update(with: Array(movies))
+            self.view?.update(with: Array(people))
             self.view?.setLoading(false)
         })
             

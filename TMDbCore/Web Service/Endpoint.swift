@@ -12,6 +12,7 @@ internal enum Endpoint {
 	case configuration
 	case moviesNowPlaying(region: String, page: Int)
 	case showsOnTheAir(page: Int)
+    case trendingPeople(page: Int)
     case searchResults(query: String, page: Int)
     case show(identifier: Int64)
     case movie(identifier: Int64)
@@ -52,6 +53,8 @@ private extension Endpoint {
 			return "movie/now_playing"
 		case .showsOnTheAir:
 			return "tv/on_the_air"
+        case .trendingPeople:
+            return "person/popular"
         case .searchResults:
             return "search/multi"
         case .show(let identifier):
@@ -73,6 +76,8 @@ private extension Endpoint {
 			]
 		case .showsOnTheAir(let page):
 			return [ "page": String(page) ]
+        case .trendingPeople(let page):
+            return [ "page": String(page) ]
         case .searchResults(let query, let page):
             return [
                 "query": query,

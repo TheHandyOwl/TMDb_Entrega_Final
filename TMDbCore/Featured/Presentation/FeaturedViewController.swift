@@ -18,6 +18,8 @@ class FeaturedViewController: UIViewController {
 	@IBOutlet private var showsStackView: UIStackView!
 	@IBOutlet private var moviesLabel: UILabel!
 	@IBOutlet private var moviesStackView: UIStackView!
+    @IBOutlet private var personsLabel: UILabel!
+    @IBOutlet private var personsStackView: UIStackView!
     @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet private var loadingView: UIActivityIndicatorView!
 
@@ -76,6 +78,10 @@ extension FeaturedViewController: FeaturedView {
 	func setMoviesHeaderTitle(_ title: String) {
 		moviesLabel.text = title
 	}
+    
+    func setPeopleHeaderTitle(_ title: String) {
+        personsLabel.text = title
+    }
 
 	func update(with shows: [Show]) {
 		showsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
@@ -112,4 +118,22 @@ extension FeaturedViewController: FeaturedView {
 
 		cardViews.forEach { moviesStackView.addArrangedSubview($0) }
 	}
+    
+    func update(with persons: [Person]) {
+        personsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        
+        let cardViews: [UIView] = persons.map { person in
+            let cardView = CardView.instantiate()
+            cardPresenter.present(person: person, in: cardView)
+            cardView.tapGestureRecognizer.rx.event
+                .subscribe(onNext: { [weak self] _ in
+                    self?.presenter.didSelect(person: person)
+                })
+                .disposed(by: disposeBag)
+            
+            return cardView
+        }
+        
+        cardViews.forEach { personsStackView.addArrangedSubview($0) }
+    }
 }
