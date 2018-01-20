@@ -10,16 +10,18 @@ import Foundation
 
 struct PersonDetail: Decodable {
     let identifier      : Int64
-    let title           : String
-    let posterPath      : String?
+    let name            : String
+    let profilePath     : String?
     let birthdate       : String?
     let biography       : String?
+    let credits         : Filmography?
     
     private enum CodingKeys: String, CodingKey {
         case identifier = "id"
-        case title = "name"
-        case posterPath = "profile_path"
+        case name
+        case profilePath = "profile_path"
         case birthdate = "birthday"
         case biography
+        case credits = "combined_credits"
     }
 }
