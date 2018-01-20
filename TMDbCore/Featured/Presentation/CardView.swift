@@ -27,8 +27,6 @@ final class CardView: UIView, NibLoadableView {
 
 	// MARK: - Overrides
 
-	// MARK: - Overrides
-
 	override var intrinsicContentSize: CGSize {
 		return CGSize(width: UIViewNoIntrinsicMetric, height: Constants.height)
 	}
