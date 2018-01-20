@@ -9,6 +9,7 @@
 import RxSwift
 
 final class MoviePresenter: DetailPresenter {
+    private let detailNavigator: DetailNavigator
     private let repository: MovieRepositoryProtocol
     private let dateFormatter: DateFormatter
     
@@ -17,9 +18,11 @@ final class MoviePresenter: DetailPresenter {
     
     weak var view: DetailView?
     
-    init(repository: MovieRepositoryProtocol,
+    init(detailNavigator: DetailNavigator,
+         repository: MovieRepositoryProtocol,
          dateFormatter: DateFormatter,
          identifier: Int64) {
+        self.detailNavigator = detailNavigator
         self.repository = repository
         self.dateFormatter = dateFormatter
         self.identifier = identifier
@@ -42,6 +45,7 @@ final class MoviePresenter: DetailPresenter {
     }
     
     func didSelect(item: PosterStripItem) {
+        detailNavigator.showDetail(withIdentifier: item.identifier, mediaType: .person)
     }
     
     private func detailSections(for movie: MovieDetail) -> [DetailSection] {
