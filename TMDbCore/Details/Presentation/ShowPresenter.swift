@@ -50,17 +50,14 @@ final class ShowPresenter: DetailPresenter {
     }
     
     private func detailSections(for show: ShowDetail) -> [DetailSection] {
-        // Creamos el header al detailSection
         var detailSections: [DetailSection] = [
             .header(DetailHeader(show: show, dateFormatter: dateFormatter))
         ]
         
-        // Añadimos el about
         if let overview = show.overview {
             detailSections.append(.about(title: "Overview", detail: overview))
         }
         
-        // Añadimos el posterStrip
         let items = show.credits?.cast.map { PosterStripItem(castMember: $0) }
         
         if let items = items {

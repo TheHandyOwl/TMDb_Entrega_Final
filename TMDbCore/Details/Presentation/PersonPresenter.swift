@@ -49,17 +49,14 @@ final class PersonPresenter: DetailPresenter {
     }
     
     private func detailSections(for person: PersonDetail) -> [DetailSection] {
-        // Create the detailSection
         var detailSections: [DetailSection] = [
             .header(DetailHeader(person: person, dateFormatter: dateFormatter))
         ]
         
-        // Adding biography
         if let biography = person.biography {
             detailSections.append(.about(title: "Biography", detail: biography))
         }
 
-        // Adding credits
         let items = person.credits?.cast.map { PosterStripItem(worksIn: $0) }
         
         if let items = items {
