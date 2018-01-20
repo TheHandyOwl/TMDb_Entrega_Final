@@ -35,3 +35,8 @@ $ open TMDb.xcworkspace
 ## Build and run
 
 Build TMDbCore and TMDb to test Playgrounds and run the aplication.
+
+## Git Branch
+
+Valid branch is master branch
+
