@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0768219720139F95000C9648 /* Filmography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768219620139F95000C9648 /* Filmography.swift */; };
+		076821992013A1C7000C9648 /* PosterStripItem+WorksIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076821982013A1C7000C9648 /* PosterStripItem+WorksIn.swift */; };
 		07AE46571FDC7C9F005B2A78 /* DetailHeader+ShowDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE46561FDC7C9F005B2A78 /* DetailHeader+ShowDetail.swift */; };
 		07AE46591FDC7CD6005B2A78 /* ShowDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE46581FDC7CD6005B2A78 /* ShowDetail.swift */; };
 		07AE465B1FDC7D38005B2A78 /* ShowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE465A1FDC7D38005B2A78 /* ShowPresenter.swift */; };
@@ -167,6 +169,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0768219620139F95000C9648 /* Filmography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filmography.swift; sourceTree = "<group>"; };
+		076821982013A1C7000C9648 /* PosterStripItem+WorksIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PosterStripItem+WorksIn.swift"; sourceTree = "<group>"; };
 		07AE46561FDC7C9F005B2A78 /* DetailHeader+ShowDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailHeader+ShowDetail.swift"; sourceTree = "<group>"; };
 		07AE46581FDC7CD6005B2A78 /* ShowDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetail.swift; sourceTree = "<group>"; };
 		07AE465A1FDC7D38005B2A78 /* ShowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPresenter.swift; sourceTree = "<group>"; };
@@ -312,15 +316,17 @@
 		992D27B91F7FFD1F00BA79DE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				992D27BA1F7FFD5E00BA79DE /* DetailSection.swift */,
 				99F0564A1F8A3DBF00A680D8 /* Credits.swift */,
+				992D27BA1F7FFD5E00BA79DE /* DetailSection.swift */,
+				0768219620139F95000C9648 /* Filmography.swift */,
 				99F0564C1F8A3E3100A680D8 /* MovieDetail.swift */,
+				07AE46581FDC7CD6005B2A78 /* ShowDetail.swift */,
+				07D3BFB1200E7D3B007A2D17 /* PersonDetail.swift */,
 				99F056531F8A5F9200A680D8 /* DetailHeader+MovieDetail.swift */,
+				07D3BFAF200E7D02007A2D17 /* DetailHeader+PersonDetail.swift */,
 				07AE46561FDC7C9F005B2A78 /* DetailHeader+ShowDetail.swift */,
 				9923A74B1F8A664C00D3A6F7 /* PosterStripItem+CastMember.swift */,
-				07AE46581FDC7CD6005B2A78 /* ShowDetail.swift */,
-				07D3BFAF200E7D02007A2D17 /* DetailHeader+PersonDetail.swift */,
-				07D3BFB1200E7D3B007A2D17 /* PersonDetail.swift */,
+				076821982013A1C7000C9648 /* PosterStripItem+WorksIn.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -923,6 +929,7 @@
 				998AD7D81F7FEEF800D3A222 /* MediaType.swift in Sources */,
 				99B9A34A1F74181A004F883E /* Configuration.swift in Sources */,
 				99A4653D1F7CE3B4007F3B5B /* PosterStripView.swift in Sources */,
+				076821992013A1C7000C9648 /* PosterStripItem+WorksIn.swift in Sources */,
 				993F1E801F7A9E2E004FE33B /* Person.swift in Sources */,
 				99B7FB8B1F88CDCC003CEF98 /* PhoneDetailNavigator.swift in Sources */,
 				99C5C91A1F7B92D00038688F /* Genre.swift in Sources */,
@@ -956,6 +963,7 @@
 				99F056461F8A182200A680D8 /* FeaturedRepository.swift in Sources */,
 				99A4653A1F7CE21C007F3B5B /* PosterStripCell.swift in Sources */,
 				99B7FB8E1F88E4DA003CEF98 /* SearchNavigator.swift in Sources */,
+				0768219720139F95000C9648 /* Filmography.swift in Sources */,
 				07AE465B1FDC7D38005B2A78 /* ShowPresenter.swift in Sources */,
 				99B7FB901F88E624003CEF98 /* PhoneSearchNavigator.swift in Sources */,
 				993F1E7C1F7A9C0E004FE33B /* Show.swift in Sources */,
