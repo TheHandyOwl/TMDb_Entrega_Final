@@ -9,6 +9,7 @@
 import RxSwift
 
 final class PersonPresenter: DetailPresenter {
+    private let detailNavigator: DetailNavigator
     private let repository: PersonRepositoryProtocol
     private let dateFormatter: DateFormatter
     
@@ -17,9 +18,11 @@ final class PersonPresenter: DetailPresenter {
     
     weak var view: DetailView?
     
-    init(repository: PersonRepositoryProtocol,
+    init(detailNavigator: DetailNavigator,
+         repository: PersonRepositoryProtocol,
          dateFormatter: DateFormatter,
          identifier: Int64) {
+        self.detailNavigator = detailNavigator
         self.repository = repository
         self.dateFormatter = dateFormatter
         self.identifier = identifier
@@ -42,7 +45,7 @@ final class PersonPresenter: DetailPresenter {
     }
     
     func didSelect(item: PosterStripItem) {
-        // TODO ???
+        detailNavigator.showDetail(withIdentifier: item.identifier, mediaType: item.mediaType)
     }
     
     private func detailSections(for person: PersonDetail) -> [DetailSection] {
@@ -54,6 +57,13 @@ final class PersonPresenter: DetailPresenter {
         // Adding biography
         if let biography = person.biography {
             detailSections.append(.about(title: "Biography", detail: biography))
+        }
+
+        // Adding credits
+        let items = person.credits?.cast.map { PosterStripItem(worksIn: $0) }
+        
+        if let items = items {
+            detailSections.append(.posterStrip(title: "Works In", items: items))
         }
         
         return detailSections

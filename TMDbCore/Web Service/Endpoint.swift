@@ -88,7 +88,7 @@ private extension Endpoint {
         case .movie:
             return [ "append_to_response": "credits" ]
         case .person:
-            return [ "append_to_response": "movie_credits" ]
+            return [ "append_to_response": "combined_credits" ]
         }
 	}
 }

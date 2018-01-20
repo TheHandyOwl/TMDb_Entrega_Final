@@ -10,9 +10,9 @@ import Foundation
 
 extension DetailHeader {
     init(person: PersonDetail, dateFormatter: DateFormatter) {
-        title = person.title
-        posterPath = person.posterPath
-        backdropPath = person.posterPath
+        title = person.name
+        posterPath = person.profilePath
+        backdropPath = person.credits?.cast.first?.posterPath ?? ""
         
         let birthdate = person.birthdate.flatMap { dateFormatter.date(from: $0)}
         let year = (birthdate?.year).map { String($0) }
