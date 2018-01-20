@@ -4,6 +4,14 @@ extension Date {
 	var year: Int {
 		return Calendar.autoupdatingCurrent.component(.year, from: self)
 	}
+        
+    var month: Int {
+        return Calendar.autoupdatingCurrent.component(.month, from: self)
+    }
+    
+    var day: Int {
+        return Calendar.autoupdatingCurrent.component(.day, from: self)
+    }
 
 	var beginningOfDay: Date {
 		let calendar = Calendar.autoupdatingCurrent

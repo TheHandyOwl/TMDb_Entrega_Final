@@ -11,6 +11,7 @@ import RxSwift
 protocol FeaturedRepositoryProtocol {
     func moviesNowPlaying(region: String) -> Observable<[Movie]>
     func showsOnTheAir() -> Observable<[Show]>
+    func trendingPeople() -> Observable<[Person]>
 }
 
 final class FeaturedRepository: FeaturedRepositoryProtocol {
@@ -29,4 +30,10 @@ final class FeaturedRepository: FeaturedRepositoryProtocol {
         return webService.load(Page<Show>.self, from: .showsOnTheAir(page: 1))
             .map { $0.results }
     }
+    
+    func trendingPeople() -> Observable<[Person]> {
+        return webService.load(Page<Person>.self, from: .trendingPeople(page: 1))
+            .map { $0.results }
+    }
+    
 }
