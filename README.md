@@ -6,19 +6,20 @@ RxSwift programming against 'The Movie Database API'
 
 ## Config
 
-1. File **Keys.xcconfig.example** is an example with the API key/value
+1. File **TMDbCore/Config/Keys.xcconfig.example** is an example with the API key/value
 
-2. Copy or rename this file as **Keys.xcconfig**
+2. Copy or rename this file as **TMDbCore/Config/Keys.xcconfig**
 
 3. Customize the file with your own TMDB_API_KEY
 
-4. Import **Keys.xcconfig** to your TMDbCore/Config folder
+4. Import **TMDbCore/Config/Keys.xcconfig** to your **TMDbCore/Config** folder
 
-5. Install Carthage
+5. Install Carthage or update it, or probably you'll see 'No such module RxSwift' error. Make sure that RxSwift is configured correctly
 
 ```
 $ cd <your_TMDB_dir>
 $ carthage build --platform iOS
+$ carthage update
 ```
 
 **Build process can take several minutes**
